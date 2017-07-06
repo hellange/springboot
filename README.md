@@ -9,11 +9,14 @@ Just some initial experiments (weather data API) creating and deploying a Spring
 ### Create docker image
 `docker build -t weather .`
 
-### Run docker locally using docker-compose
+### Run docker locally with docker
+`docker run -t -p 8080:8080 weather`
+
+### Run docker locally using docker-compose (if not using docker directly)
 `docker-compose up --build -d`
 Will also restart and rebuild the image if the .jar has changed
 
-### Manually copy image to "prod" location:
+### Manually copy image to "prod" location (using just scp):
 
 Save image: `docker save -o target/my_weather_image weather`
 
