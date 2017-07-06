@@ -2,12 +2,16 @@
 
 Just some initial experiments (weather data API) creating and deploying a Spring Boot appliction docker image.
 
-### Run
+### Run locally
 
 `mvn package && java -jar target/gs-spring-boot-0.1.0.jar`
 
 ### Create docker image
 `docker build -t weather .`
+
+### Run docker locally using docker-compose
+`docker-compose up --build -d`
+Will also restart and rebuild the image if the .jar has changed
 
 ### Manually copy image to "prod" location:
 
