@@ -12,7 +12,7 @@ docker build -t weather .
 
 Save image: docker save -o my_weather_image weather
 
-Copy saved docker image to Digital Ocean: scp my_weather_image root@yr.langehaug.net:/weather
+Copy saved docker image to "prod": scp my_weather_image root@yr.langehaug.net:/weather
 
 Log into the Digital Ocean docker droplet and run the docker image
 
