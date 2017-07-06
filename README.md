@@ -3,6 +3,7 @@
 Just some initial experiments (weather data API) creating and deploying a Spring Boot appliction docker image.
 
 ### Run
+
 mvn package && java -jar target/gs-spring-boot-0.1.0.jar
 
 ### Create docker image
