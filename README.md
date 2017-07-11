@@ -16,11 +16,17 @@ Just some initial experiments (weather data API) creating and deploying a Spring
 `docker-compose up --build -d`
 Will also restart and rebuild the image if the .jar has changed
 
+
+
 ### Manually copy image to "prod" location (using just scp):
 
 Save image: `docker save -o target/my_weather_image weather`
 
-Copy saved docker image to "prod": `scp target/my_weather_image root@yr.langehaug.net:/weather`
+Copy saved docker image to "prod" machine: `scp target/my_weather_image root@yr.langehaug.net:/weather`
 
-Log into "prod" docker and run the container...
+Log into "prod" machine, and cd into directory where the copied file is located.
+
+Load the copied image into docker: docker load -i weather`
+
+Start in 'prod' machine: docker run -t -p 80:8080 weather`
 
