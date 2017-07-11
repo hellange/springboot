@@ -1,8 +1,5 @@
 package hello;
 
-import org.json.JSONObject;
-import org.json.XML;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,21 +14,7 @@ import java.util.List;
 @RestController
 public class WeatherController {
 
-    @RequestMapping("/forecast")
-    public String forecast() {
-        String soapmessageString = "<xml>yourStringURLorFILE</xml>";
-        JSONObject soapDatainJsonObject = null;
-        try {
-            soapDatainJsonObject= XML.toJSONObject(soapmessageString);
-
-        } catch (Exception ex) {
-            System.out.println("Exception "+ ex);
-        }
-        return soapDatainJsonObject.toString();
-
-    }
-
-    @RequestMapping(value = "/", produces = "application/json")
+    @RequestMapping(value = "/forecast", produces = "application/json")
     public List<Time> index() throws Exception {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
